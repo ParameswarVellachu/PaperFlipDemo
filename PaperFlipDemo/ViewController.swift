@@ -7,10 +7,16 @@
 
 import UIKit
 
+struct UserListModel {
+    var title: String
+    var image: String
+    var description: String
+}
+
 class ViewController: UIViewController {
     
     var pageController: UIPageViewController?
-    var pageContent = NSArray()
+    var pageContent = [UserListModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +51,12 @@ class ViewController: UIViewController {
     
     func createContentPages() {
         
-        var pageStrings = [String]()
-        
-        for i in 1...11 {
-            let contentString = "<html><head></head><body><br><h1>Chapter \(i)</h1><p>This is the page \(i) of content displayed using UIPageViewController in iOS 8.</p></body></html>"
-            pageStrings.append(contentString)
-        }
-        pageContent = pageStrings as NSArray
+        pageContent = [UserListModel(title: "Rose1", image: "rose-1", description: "rose1 description"),
+        UserListModel(title: "Rose2", image: "rose-2", description: "rose2 description"),
+        UserListModel(title: "Rose3", image: "rose-3", description: "rose3 description"),
+        UserListModel(title: "Rose4", image: "rose-4", description: "rose4 description"),
+        UserListModel(title: "Rose5", image: "rose-5", description: "rose5 description"),
+        UserListModel(title: "Rose6", image: "rose-6", description: "rose6 description")]
     }
 }
 
@@ -97,16 +102,22 @@ extension ViewController {
                                       bundle: Bundle.main)
         let dataViewController = storyBoard.instantiateViewController(withIdentifier: "contentView") as! ContentViewController
         
-        dataViewController.dataObject = pageContent[index] as AnyObject
+        dataViewController.dataObject = pageContent[index]
         return dataViewController
     }
     
     func indexOfViewController(viewController: ContentViewController) -> Int {
         
-        if let dataObject: AnyObject = viewController.dataObject {
-            return pageContent.index(of: dataObject)
+        if let dataObject = viewController.dataObject {
+            return pageContent.indexOf(element: dataObject)!
         } else {
             return NSNotFound
         }
+    }
+}
+
+extension Collection where Iterator.Element == UserListModel {
+    func indexOf(element: UserListModel) -> Index? {
+        return firstIndex(where: { $0.title == element.title })
     }
 }

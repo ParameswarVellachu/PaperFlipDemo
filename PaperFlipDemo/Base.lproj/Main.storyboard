@@ -16,30 +16,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5e-6N-RFI">
-                                <rect key="frame" x="40" y="114" width="240" height="414"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wXM-3a-5un">
+                                <rect key="frame" x="35" y="100" width="250" height="250"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CJi-qy-hg2">
+                                <rect key="frame" x="35" y="390" width="250" height="138"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndq-6P-iQp">
+                                <rect key="frame" x="30" y="40" width="260" height="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.57475143671035767" green="0.49624685879439651" blue="0.54606562028243777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b5e-6N-RFI" secondAttribute="trailing" constant="40" id="2mu-0C-VHy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b5e-6N-RFI" secondAttribute="bottom" constant="40" id="F6I-MS-v1d"/>
-                            <constraint firstItem="b5e-6N-RFI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="94" id="OWb-j6-Uwd"/>
-                            <constraint firstItem="b5e-6N-RFI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="oFd-w3-2zq"/>
+                            <constraint firstItem="Ndq-6P-iQp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="26P-8g-fgl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wXM-3a-5un" secondAttribute="trailing" constant="35" id="2vq-WJ-uIh"/>
+                            <constraint firstItem="wXM-3a-5un" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.440141" id="4Vc-1Q-U1p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CJi-qy-hg2" secondAttribute="bottom" constant="40" id="4fH-IW-drI"/>
+                            <constraint firstItem="CJi-qy-hg2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="AVk-NI-9gc"/>
+                            <constraint firstItem="wXM-3a-5un" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="FKN-eC-tj6"/>
+                            <constraint firstItem="CJi-qy-hg2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.242958" id="MIJ-bn-GEi"/>
+                            <constraint firstItem="Ndq-6P-iQp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="c01-Td-X1f"/>
+                            <constraint firstItem="CJi-qy-hg2" firstAttribute="top" secondItem="wXM-3a-5un" secondAttribute="bottom" constant="40" id="cn3-ja-hpN"/>
+                            <constraint firstItem="wXM-3a-5un" firstAttribute="top" secondItem="Ndq-6P-iQp" secondAttribute="bottom" constant="40" id="elZ-2A-9dK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ndq-6P-iQp" secondAttribute="trailing" constant="30" id="f5I-Dg-8cW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CJi-qy-hg2" secondAttribute="trailing" constant="35" id="iiy-Dj-3mg"/>
+                            <constraint firstItem="wXM-3a-5un" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.78125" id="p6I-gA-1cp"/>
+                            <constraint firstItem="CJi-qy-hg2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.78125" id="s9R-5t-k4O"/>
+                            <constraint firstItem="CJi-qy-hg2" firstAttribute="top" secondItem="wXM-3a-5un" secondAttribute="bottom" constant="40" id="x8f-qf-5UH"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="b5e-6N-RFI" id="ndv-GB-q0K"/>
+                        <outlet property="textDescription" destination="CJi-qy-hg2" id="e6C-5s-Wlx"/>
+                        <outlet property="titleLabel" destination="Ndq-6P-iQp" id="Vfu-WL-NcV"/>
+                        <outlet property="userImage" destination="wXM-3a-5un" id="4aQ-Ws-RTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="-72"/>
+            <point key="canvasLocation" x="577.5" y="-72.887323943661968"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ADA-Ls-HfC">
@@ -58,6 +81,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
